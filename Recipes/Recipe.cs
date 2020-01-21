@@ -12,5 +12,10 @@ namespace Recipes
             Name = name;
             Ingredients = new List<Ingredient>();
         }
+
+        public void AddIngredient(Ingredient ingredient)
+        {
+            Ingredients.Add(ingredient);
+        }
     }
 }
