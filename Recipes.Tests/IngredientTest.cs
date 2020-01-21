@@ -12,5 +12,14 @@ namespace Recipes.Tests
             
             Assert.Equal(ingredientName, ingredient.Name);
         }
+
+        [Fact]
+        public void IngredientHasAnAmount()
+        {
+            var ingredientAmount = "1/2 cup";
+            var ingredient = new Ingredient("name", ingredientAmount);
+            
+            Assert.Equal(ingredientAmount, ingredient.Amount);
+        }
     }
 }
