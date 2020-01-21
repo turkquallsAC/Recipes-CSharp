@@ -1,26 +1,28 @@
-using System;
 using Xunit;
 
 namespace Recipes.Tests
 {
     public class IngredientTest
     {
+        private const string IngredientName = "name";
+        private const string IngredientAmount = "amount";
+        private readonly Ingredient _ingredient;
+
+        public IngredientTest()
+        {
+            _ingredient = new Ingredient(IngredientName, IngredientAmount);
+        }
+
         [Fact]
         public void IngredientShouldHaveAName()
         {
-            var name = "name";
-            var ingredient = new Ingredient(name, String.Empty);
-            
-            Assert.Equal(name, ingredient.Name);
+            Assert.Equal(IngredientName, _ingredient.Name);
         }
 
         [Fact]
         public void IngredientHasAnAmount()
         {
-            var amount = "1/2 cup";
-            var ingredient = new Ingredient(String.Empty, amount);
-            
-            Assert.Equal(amount, ingredient.Amount);
+            Assert.Equal(IngredientAmount, _ingredient.Amount);
         }
     }
 }

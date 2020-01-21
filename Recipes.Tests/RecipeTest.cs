@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -6,32 +5,33 @@ namespace Recipes.Tests
 {
     public class RecipeTest
     {
+        private const string RecipeName = "name";
+        private readonly Recipe _recipe;
+
+        public RecipeTest()
+        {
+            _recipe = new Recipe(RecipeName);
+        }
+
         [Fact]
         public void RecipeShouldHaveAName()
         {
-            var name = "name";
-            var recipe = new Recipe(name);
-            
-            Assert.Equal(name, recipe.Name);
+            Assert.Equal(RecipeName, _recipe.Name);
         }
 
         [Fact]
         public void RecipeShouldHaveAListForIngredients()
         {
-            var recipe = new Recipe(String.Empty);
-
-            Assert.IsType<List<Ingredient>>(recipe.Ingredients);
+            Assert.IsType<List<Ingredient>>(_recipe.Ingredients);
         }
         
         [Fact]
         public void ShouldAddIngredients()
         {
-            var recipe = new Recipe(String.Empty);
+            var ingredient = new Ingredient(string.Empty, string.Empty);
+            _recipe.AddIngredient(ingredient);
 
-            Ingredient ingredient = new Ingredient(String.Empty, String.Empty);
-            recipe.AddIngredient(ingredient);
-
-            Assert.Contains(ingredient, recipe.Ingredients);
+            Assert.Contains(ingredient, _recipe.Ingredients);
         }
     }
 }

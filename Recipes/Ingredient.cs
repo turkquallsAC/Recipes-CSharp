@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Recipes
+﻿namespace Recipes
 {
     public class Ingredient
     {
