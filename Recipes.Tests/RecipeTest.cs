@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Recipes.Tests
@@ -11,6 +13,14 @@ namespace Recipes.Tests
             var recipe = new Recipe(name);
             
             Assert.Equal(name, recipe.Name);
+        }
+
+        [Fact]
+        public void RecipeShouldHaveAListForIngredients()
+        {
+            var recipe = new Recipe(String.Empty);
+
+            Assert.IsType<List<Ingredient>>(recipe.Ingredients);
         }
     }
 }
