@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace Recipes.Tests
@@ -7,19 +8,19 @@ namespace Recipes.Tests
         [Fact]
         public void IngredientShouldHaveAName()
         {
-            var ingredientName = "name";
-            var ingredient = new Ingredient(ingredientName, "");
+            var name = "name";
+            var ingredient = new Ingredient(name, String.Empty);
             
-            Assert.Equal(ingredientName, ingredient.Name);
+            Assert.Equal(name, ingredient.Name);
         }
 
         [Fact]
         public void IngredientHasAnAmount()
         {
-            var ingredientAmount = "1/2 cup";
-            var ingredient = new Ingredient("", ingredientAmount);
+            var amount = "1/2 cup";
+            var ingredient = new Ingredient(String.Empty, amount);
             
-            Assert.Equal(ingredientAmount, ingredient.Amount);
+            Assert.Equal(amount, ingredient.Amount);
         }
     }
 }
