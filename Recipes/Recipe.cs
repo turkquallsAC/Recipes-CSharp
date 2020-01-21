@@ -17,5 +17,10 @@ namespace Recipes
         {
             Ingredients.Add(ingredient);
         }
+
+        public void RemoveIngredient(Ingredient ingredient)
+        {
+            Ingredients.Remove(ingredient);
+        }
     }
 }
