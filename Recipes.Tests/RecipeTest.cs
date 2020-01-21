@@ -22,5 +22,16 @@ namespace Recipes.Tests
 
             Assert.IsType<List<Ingredient>>(recipe.Ingredients);
         }
+        
+        [Fact]
+        public void ShouldAddIngredients()
+        {
+            var recipe = new Recipe(String.Empty);
+
+            Ingredient ingredient = new Ingredient(String.Empty, String.Empty);
+            recipe.AddIngredient(ingredient);
+
+            Assert.Contains(ingredient, recipe.Ingredients);
+        }
     }
 }
