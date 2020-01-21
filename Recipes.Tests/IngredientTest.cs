@@ -8,7 +8,7 @@ namespace Recipes.Tests
         public void IngredientShouldHaveAName()
         {
             var ingredientName = "name";
-            var ingredient = new Ingredient(ingredientName);
+            var ingredient = new Ingredient(ingredientName, "");
             
             Assert.Equal(ingredientName, ingredient.Name);
         }
@@ -17,7 +17,7 @@ namespace Recipes.Tests
         public void IngredientHasAnAmount()
         {
             var ingredientAmount = "1/2 cup";
-            var ingredient = new Ingredient("name", ingredientAmount);
+            var ingredient = new Ingredient("", ingredientAmount);
             
             Assert.Equal(ingredientAmount, ingredient.Amount);
         }

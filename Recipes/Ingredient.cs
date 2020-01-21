@@ -5,10 +5,12 @@ namespace Recipes
     public class Ingredient
     {
         public string Name { get; }
-        
-        public Ingredient(string name)
+        public string Amount { get; }
+
+        public Ingredient(string name, string amount)
         {
             Name = name;
+            Amount = amount;
         }
     }
 }
