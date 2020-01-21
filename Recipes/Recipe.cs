@@ -4,7 +4,7 @@ namespace Recipes
 {
     public class Recipe
     {
-        public string Name { get; }
+        public string Name { get; private set; }
         public List<Ingredient> Ingredients { get; }
 
         public Recipe(string name)
@@ -21,6 +21,11 @@ namespace Recipes
         public void RemoveIngredient(Ingredient ingredient)
         {
             Ingredients.Remove(ingredient);
+        }
+
+        public void UpdateName(string name)
+        {
+            Name = name;
         }
     }
 }
