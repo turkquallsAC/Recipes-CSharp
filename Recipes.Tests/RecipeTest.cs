@@ -8,7 +8,7 @@ namespace Recipes.Tests
         public void RecipeShouldHaveAName()
         {
             var name = "name";
-            var recipe = new RecipeTest(name);
+            var recipe = new Recipe(name);
             
             Assert.Equal(name, recipe.Name);
         }
