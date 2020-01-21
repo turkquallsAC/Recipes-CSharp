@@ -47,5 +47,14 @@ namespace Recipes.Tests
             
             Assert.DoesNotContain(ingredient1, _recipe.Ingredients);
         }
+
+        [Fact]
+        public void UpdateRecipeName()
+        {
+            const string newName = "new";
+            _recipe.UpdateName(newName);
+            
+            Assert.Equal(newName, _recipe.Name);
+        }
     }
 }
